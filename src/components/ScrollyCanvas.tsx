@@ -21,8 +21,8 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
       const img = new Image();
       // Format number to '000' to '119'
       const paddedIndex = i.toString().padStart(3, "0");
-      // E.g. /Sequence/frame_000_delay-0.066s.png
-      img.src = `/Sequence/frame_${paddedIndex}_delay-0.066s.png`;
+      // Use exactly lowercase 'sequence' to match Vercel's case-sensitive Linux filesystem
+      img.src = `/sequence/frame_${paddedIndex}_delay-0.066s.png`;
       
       img.onload = () => {
         loadedCount++;
