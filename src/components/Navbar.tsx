@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { AudioPlayer } from "@/components/AudioPlayer";
 
 export function Navbar() {
   const { scrollY } = useScroll();
@@ -21,25 +22,32 @@ export function Navbar() {
       style={{ background, backdropFilter }}
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-300"
     >
-      <div className="text-xl font-bold tracking-tight text-white/90">
-        AAKASH<span className="text-white/40">.K</span>
+      <div 
+        style={{ fontFamily: 'var(--font-playfair)' }}
+        className="text-xl font-normal uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-400"
+      >
+        AAKASH<span className="text-emerald-400/50">.K</span>
       </div>
 
-      <a
-        href="https://www.linkedin.com/in/k-aakash-5a177b24a"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-white/80 transition-all hover:bg-white/10 hover:text-white"
-        title="Connect on LinkedIn"
-      >
-        <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <LinkedinIcon className="h-4 w-4 transition-transform group-hover:scale-110 group-hover:text-blue-400" />
-        <span className="relative z-10 flex items-center">
-          <span className="border-b border-transparent transition-colors duration-300 group-hover:border-blue-400/50">
-            Connect
+      <div className="flex items-center gap-4">
+        <AudioPlayer />
+        
+        <a
+          href="https://www.linkedin.com/in/k-aakash-5a177b24a"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-white/80 transition-all hover:bg-white/10 hover:text-white"
+          title="Connect on LinkedIn"
+        >
+          <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <LinkedinIcon className="h-4 w-4 transition-transform group-hover:scale-110 group-hover:text-blue-400" />
+          <span className="relative z-10 flex items-center">
+            <span className="border-b border-transparent transition-colors duration-300 group-hover:border-blue-400/50">
+              Connect
+            </span>
           </span>
-        </span>
-      </a>
+        </a>
+      </div>
     </motion.nav>
   );
 }

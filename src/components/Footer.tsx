@@ -6,7 +6,7 @@ import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-[#0a0a0a] pt-24 pb-12 overflow-hidden z-20">
+    <footer className="relative border-t border-white/10 bg-transparent pt-24 pb-12 overflow-hidden z-20">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
 

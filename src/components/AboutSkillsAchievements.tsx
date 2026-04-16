@@ -14,15 +14,15 @@ export function AboutSkillsAchievements() {
   ];
 
   const achievements = [
-    "Silver Medalist – Undergraduate Program",
-    "Gold Medalist – Quiz Competition",
-    "Bronze Medalist – Debate Competition"
+    "Silver Medalist – Undergraduate Program-2024",
+    "Gold Medalist – Quiz Competition-2024",
+    "Bronze Medalist – Debate Competition-2023"
   ];
 
   const leadership = [
-    "Department Council President",
-    "Class Representative",
-    "Event Head"
+    "Department Council President-2024",
+    "Class Representative-2023",
+    "Event Head-2023 & 2024"
   ];
 
   const staggerContainer = {
@@ -39,7 +39,7 @@ export function AboutSkillsAchievements() {
   };
 
   return (
-    <section className="py-24 px-6 max-w-5xl mx-auto relative z-20 flex flex-col gap-12 bg-[#121212]">
+    <section className="py-24 px-6 max-w-5xl mx-auto relative z-20 flex flex-col gap-12 bg-transparent">
       
       {/* 1. About Me */}
       <motion.div

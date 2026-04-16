@@ -10,7 +10,7 @@ export function Projects() {
       description: "Comprehensive analysis of Disney's Marvel acquisition, ROI tracking, and post-merger integration impact on group profitability.",
       icon: <LineChart className="w-6 h-6 text-blue-400" />,
       tags: ["M&A Strategy", "ROI Analysis", "Financial Modeling"],
-      link: "/projects/Marvel_Authenticated_Data_Report.docx"
+      link: "Marvel Project.docx"
     },
     {
       title: "Financial Dashboard",
@@ -29,7 +29,7 @@ export function Projects() {
   ];
 
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto relative z-20 bg-[#121212]">
+    <section className="py-32 px-6 max-w-7xl mx-auto relative z-20 bg-transparent">
       <div className="mb-20">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Strategic Projects</h2>
         <div className="w-20 h-1 bg-white/20 rounded-full" />
