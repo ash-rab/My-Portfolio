@@ -9,15 +9,23 @@ export function AudioPlayer() {
 
   useEffect(() => {
     // Initialize audio object
-    audioRef.current = new Audio("/bg-music.mp3");
-    audioRef.current.loop = true;
-    audioRef.current.volume = 0.4; // Default volume (40%)
+    const audio = new Audio("/bg-music.mp3");
+    audio.loop = true;
+    audio.volume = 0.4; // Default volume (40%)
+    audioRef.current = audio;
+
+    // Sync state with actual audio element events
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+      audio.pause();
+      audioRef.current = null;
     };
   }, []);
 
@@ -28,11 +36,11 @@ export function AudioPlayer() {
       audioRef.current.pause();
     } else {
       // Browsers require user interaction before playing audio
-      audioRef.current.play().catch(error => {
+      audioRef.current.play().catch((error) => {
         console.error("Audio playback failed:", error);
+        setIsPlaying(false);
       });
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (

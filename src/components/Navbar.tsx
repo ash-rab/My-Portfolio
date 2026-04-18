@@ -23,10 +23,10 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-300"
     >
       <div 
-        style={{ fontFamily: 'var(--font-playfair)' }}
-        className="text-xl font-normal uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-400"
+        style={{ fontFamily: 'var(--font-finance)' }}
+        className="text-xl font-medium uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-emerald-400"
       >
-        AAKASH<span className="text-emerald-400/50">.K</span>
+      <span className="text-emerald-400/50"></span>
       </div>
 
       <div className="flex items-center gap-4">

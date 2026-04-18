@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,8 +7,15 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const financeFont = EB_Garamond({
+  variable: "--font-finance",
+  subsets: ["latin"],
+});
+
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  variable: "--font-name",
   subsets: ["latin"],
 });
 
@@ -24,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#121212] text-white`}>
+      <body className={`${inter.variable} ${financeFont.variable} ${montserrat.variable} font-sans antialiased bg-[#121212] text-white`}>
         {children}
       </body>
     </html>

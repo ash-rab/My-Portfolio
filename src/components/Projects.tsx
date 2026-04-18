@@ -10,7 +10,7 @@ export function Projects() {
       description: "Comprehensive analysis of Disney's Marvel acquisition, ROI tracking, and post-merger integration impact on group profitability.",
       icon: <LineChart className="w-6 h-6 text-blue-400" />,
       tags: ["M&A Strategy", "ROI Analysis", "Financial Modeling"],
-      link: "Marvel Project.docx"
+      link: "/projects/Marvel_Authenticated_Data_Report.docx"
     },
     {
       title: "Financial Dashboard",

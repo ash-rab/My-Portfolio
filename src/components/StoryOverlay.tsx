@@ -22,14 +22,14 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
 
   return (
     <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none w-full h-full max-w-7xl mx-auto md:px-12 px-6">
-      {/* Section 1: Center */}
+      {/* Section 1: Left */}
       <motion.div
         style={{ opacity: opacity1, y: y1 }}
-        className="absolute inset-x-0 top-[40%] flex flex-col items-center justify-center text-center"
+        className="absolute left-0 md:left-0 top-[40%] flex flex-col items-start justify-center text-left"
       >
-        <h1 
-          style={{ fontFamily: 'var(--font-playfair)' }}
-          className="text-5xl md:text-7xl font-normal uppercase tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-emerald-400 mb-4 filter drop-shadow-[0_0_30px_rgba(52,211,153,0.3)] pb-2"
+        <h1
+          style={{ fontFamily: 'var(--font-name)' }}
+          className="text-5xl md:text-7xl font-extrabold uppercase tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-emerald-400 mb-4 filter drop-shadow-[0_0_30px_rgba(52,211,153,0.3)] pb-2"
         >
           AAKASH K
         </h1>
@@ -38,10 +38,10 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
         </p>
       </motion.div>
 
-      {/* Section 2: Left */}
+      {/* Section 2: Right */}
       <motion.div
         style={{ opacity: opacity2, y: y2 }}
-        className="absolute left-6 md:left-12 top-[45%] flex flex-col items-start justify-center text-left max-w-xl md:max-w-2xl"
+        className="absolute right-6 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
       >
         <p className="text-3xl md:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
           I analyze businesses, financial performance, and capital markets.
@@ -54,7 +54,7 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
         className="absolute right-6 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
       >
         <p className="text-3xl md:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
-          Focused on valuation, M&A strategy, and investment decision-making.
+          Interested  valuation, M&A strategy, and investment decision-making.
         </p>
       </motion.div>
 
