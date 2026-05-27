@@ -25,7 +25,7 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
       {/* Section 1: Left */}
       <motion.div
         style={{ opacity: opacity1, y: y1 }}
-        className="absolute left-0 md:left-0 top-[40%] flex flex-col items-start justify-center text-left"
+        className="absolute left-6 md:left-12 top-[40%] flex flex-col items-start justify-center text-left"
       >
         <h1
           style={{ fontFamily: 'var(--font-name)' }}
@@ -54,7 +54,7 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
         className="absolute right-6 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
       >
         <p className="text-3xl md:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
-          Interested  valuation, M&A strategy, and investment decision-making.
+          Interested in valuation, M&A strategy, and investment decision-making.
         </p>
       </motion.div>
 

@@ -8,6 +8,7 @@ import { StoryOverlay } from "@/components/StoryOverlay";
 import { Projects } from "@/components/Projects";
 import { AboutSkillsAchievements } from "@/components/AboutSkillsAchievements";
 import { Footer } from "@/components/Footer";
+import { PremiumEffects } from "@/components/PremiumEffects";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-[#121212]">
+      <PremiumEffects />
       <Navbar />
       
       {/* 500vh Scrolly section */}
