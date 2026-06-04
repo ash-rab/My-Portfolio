@@ -47,7 +47,7 @@ export function AboutSkillsAchievements() {
       name: "Valuation (DCF & CCA)",
       desc: "Discounted Cash Flow modeling, Comparable Company Analysis, and WACC calculations.",
       icon: <Sparkles className="w-5 h-5 text-amber-400" />,
-      level: "Intermediate",
+      level: "Beginner",
       glowColor: "rgba(245, 158, 11, 0.15)"
     },
     {
@@ -61,14 +61,14 @@ export function AboutSkillsAchievements() {
       name: "Excel & Modeling",
       desc: "Advanced spreadsheet formulas, multi-scenario planning, and dynamic financial forecasts.",
       icon: <Briefcase className="w-5 h-5 text-emerald-400" />,
-      level: "Advanced",
+      level: "Intermediate-Beginner",
       glowColor: "rgba(16, 185, 129, 0.15)"
     },
     {
       name: "Tableau Analytics",
       desc: "Interactive dashboard engineering, real-time KPI metrics, and operational visualization.",
       icon: <User className="w-5 h-5 text-pink-400" />,
-      level: "Advanced",
+      level: "Intermediate",
       glowColor: "rgba(236, 72, 153, 0.15)"
     },
     {
