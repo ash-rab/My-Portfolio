@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   BarChart3,
@@ -139,7 +140,7 @@ export function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="projects" className="py-32 px-6 max-w-7xl mx-auto relative z-20 bg-transparent">
+    <section id="projects" className="py-32 px-6 max-w-7xl mx-auto relative z-30 bg-transparent">
       {/* Header */}
       <div className="mb-20">
         <span className="text-xs uppercase tracking-widest font-semibold text-white/50 mb-2 block">
@@ -336,6 +337,11 @@ function CaseStudyModal({
 }) {
   const modalContentRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<"overview" | "deliverable">("overview");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close when hitting Escape
   useEffect(() => {
@@ -353,7 +359,9 @@ function CaseStudyModal({
     }
   };
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -361,7 +369,7 @@ function CaseStudyModal({
       transition={{ duration: 0.3 }}
       onClick={handleBackdropClick}
       data-lenis-prevent
-      className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 md:p-8 overflow-y-auto"
+      className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-[9999] flex items-center justify-center p-4 md:p-8 overflow-y-auto isolation-isolate"
     >
       {/* Ambient background glow circle */}
       <div
@@ -583,6 +591,7 @@ function CaseStudyModal({
           )}
         </div>
       </motion.div>
-    </motion.div>
+    </motion.div>,
+    document.body
   );
 }

@@ -16,7 +16,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative border-t border-white/10 bg-transparent pt-12 pb-6 overflow-hidden z-20">
+    <footer className="relative border-t border-white/10 bg-transparent pt-12 pb-6 overflow-hidden z-10">
       
       {/* Animated Subtle Background Grid */}
       <div className="absolute inset-0 opacity-40 pointer-events-none z-0 footer-grid-bg" />
