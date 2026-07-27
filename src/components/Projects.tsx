@@ -128,14 +128,14 @@ export function Projects() {
     const lenis = (window as any)?.lenis;
     if (selectedProject) {
       document.body.style.overflow = "hidden";
-      if (lenis) lenis.stop();
+      lenis?.stop?.();
     } else {
       document.body.style.overflow = "";
-      if (lenis) lenis.start();
+      lenis?.start?.();
     }
     return () => {
       document.body.style.overflow = "";
-      if (lenis) lenis.start();
+      lenis?.start?.();
     };
   }, [selectedProject]);
 

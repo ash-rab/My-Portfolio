@@ -21,19 +21,31 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
   const y4 = useTransform(scrollYProgress, [0.75, 0.95], [50, -50]);
 
   return (
-    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none w-full h-full max-w-7xl mx-auto md:px-12 px-6">
-      {/* Section 1: Left */}
+    <div className="absolute inset-0 z-10 pointer-events-none w-full h-full">
+      {/* Section 1: Top-Left */}
       <motion.div
         style={{ opacity: opacity1, y: y1 }}
-        className="absolute left-6 md:left-12 top-[40%] flex flex-col items-start justify-center text-left"
+        className="absolute left-4 sm:left-6 md:left-8 top-[14%] sm:top-[16%] md:top-[18%] flex flex-col items-start justify-center text-left max-w-[260px] sm:max-w-xs md:max-w-sm lg:max-w-md"
       >
         <h1
-          style={{ fontFamily: 'var(--font-name)' }}
-          className="text-5xl md:text-7xl font-extrabold uppercase tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-emerald-400 mb-4 filter drop-shadow-[0_0_30px_rgba(52,211,153,0.3)] pb-2"
+          style={{
+            fontFamily: 'var(--font-name)',
+            background: 'linear-gradient(90deg, hsla(287, 22%, 70%, 1) 0%, hsla(191, 55%, 31%, 1) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-[0.12em] mb-2 filter drop-shadow-[0_0_25px_rgba(36,107,123,0.4)] pb-1 leading-tight"
         >
           AAKASH K
         </h1>
-        <p className="text-lg md:text-2xl text-white/80 font-light max-w-2xl drop-shadow-md">
+        <p
+          style={{
+            background: 'linear-gradient(90deg, hsla(287, 22%, 70%, 1) 0%, hsla(191, 55%, 31%, 1) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+          className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold tracking-wide filter drop-shadow-[0_0_15px_rgba(36,107,123,0.3)] leading-snug"
+        >
           MBA Finance | Future Investment Banking Professional
         </p>
       </motion.div>
@@ -41,7 +53,7 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
       {/* Section 2: Right */}
       <motion.div
         style={{ opacity: opacity2, y: y2 }}
-        className="absolute right-6 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
+        className="absolute right-4 sm:right-8 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
       >
         <p className="text-3xl md:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
           I analyze businesses, financial performance, and capital markets.
@@ -51,7 +63,7 @@ export function StoryOverlay({ scrollYProgress }: StoryOverlayProps) {
       {/* Section 3: Right */}
       <motion.div
         style={{ opacity: opacity3, y: y3 }}
-        className="absolute right-6 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
+        className="absolute right-4 sm:right-8 md:right-12 top-[45%] flex flex-col items-end justify-center text-right max-w-xl md:max-w-2xl"
       >
         <p className="text-3xl md:text-5xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
           Interested in valuation, M&A strategy, and investment decision-making.
