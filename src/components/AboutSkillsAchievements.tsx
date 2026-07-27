@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, Variants } from "framer-motion";
 import {
   Award,
   Briefcase,
@@ -9,9 +9,7 @@ import {
   LineChart,
   User,
   CheckCircle,
-  Calendar,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from "lucide-react";
 
 interface Skill {
@@ -328,7 +326,7 @@ export function AboutSkillsAchievements() {
 function WordReveal({ text }: { text: string }) {
   const words = text.split(" ");
 
-  const containerVariants: any = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -338,7 +336,7 @@ function WordReveal({ text }: { text: string }) {
     }
   };
 
-  const wordVariants: any = {
+  const wordVariants: Variants = {
     hidden: { opacity: 0, y: 8 },
     visible: {
       opacity: 1,

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useTransform, MotionValue } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useTransform, useMotionValueEvent, MotionValue } from "framer-motion";
 
 interface ScrollyCanvasProps {
   scrollYProgress: MotionValue<number>;
@@ -9,11 +9,18 @@ interface ScrollyCanvasProps {
 
 export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
+  const lastIndexRef = useRef<number>(-1);
   const frameCount = 120;
 
-  // Preload Images
+  // Preload Images & Init fixed canvas resolution once
   useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.width = 1920;
+      canvas.height = 1080;
+    }
+
     const loadedImages: HTMLImageElement[] = [];
     let loadedCount = 0;
 
@@ -27,33 +34,32 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
       img.onload = () => {
         loadedCount++;
         if (loadedCount === frameCount) {
-          // Force update to rely on useTransform firing rendering
-          setImages([...loadedImages]);
+          renderFrame(lastIndexRef.current >= 0 ? lastIndexRef.current : 0);
         }
       };
       loadedImages.push(img);
     }
-    setImages(loadedImages);
+    imagesRef.current = loadedImages;
   }, []);
 
   // Map scroll progress to frame index
   const frameIndex = useTransform(scrollYProgress, [0, 1], [0, frameCount - 1]);
 
   const renderFrame = (index: number) => {
+    const images = imagesRef.current;
     if (images.length === 0 || !canvasRef.current) return;
     
+    const frameInt = Math.floor(index);
+    if (frameInt === lastIndexRef.current && frameInt !== 0) return;
+    lastIndexRef.current = frameInt;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const img = images[Math.floor(index)];
+    const img = images[frameInt];
     if (!img || !img.complete) return;
 
-    // Fixed internal resolution
-    canvas.width = 1920;
-    canvas.height = 1080;
-
-    // Draw image covering the canvas (similar to object-fit: cover)
     const cw = canvas.width;
     const ch = canvas.height;
     const iw = img.width;
@@ -79,20 +85,16 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
     ctx.drawImage(img, drawX, drawY, drawW, drawH);
   };
 
-  useTransform(frameIndex, (latest) => {
+  useMotionValueEvent(frameIndex, "change", (latest) => {
     renderFrame(latest);
-    return latest;
   });
 
   return (
     <div className="absolute inset-0 z-0 h-full w-full pointer-events-none bg-black">
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-cover opacity-100 mix-blend-screen brightness-125"
+        className="w-full h-full object-cover opacity-100 mix-blend-screen brightness-125 transform-gpu will-change-transform"
       />
-      {/* Cinematic subtle gradients overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-[#121212]/20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#121212] via-transparent to-transparent opacity-40 pointer-events-none" />
     </div>
   );
 }

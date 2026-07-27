@@ -3,18 +3,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowUpRight,
   BarChart3,
   LineChart,
   PieChart,
   X,
-  Download,
   Briefcase,
-  Clock,
   FileText,
   CheckCircle,
   ArrowRight
 } from "lucide-react";
+import { MarvelViewer, DashboardViewer, ExcelViewer } from "./ProjectViewers";
+
 
 interface Project {
   title: string;
@@ -324,7 +323,6 @@ function InteractiveCard({
   );
 }
 
-/* Fullscreen Immersive Modal Component */
 function CaseStudyModal({
   project,
   onClose
@@ -333,6 +331,7 @@ function CaseStudyModal({
   onClose: () => void;
 }) {
   const modalContentRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState<"overview" | "deliverable">("overview");
 
   // Close when hitting Escape
   useEffect(() => {
@@ -424,128 +423,159 @@ function CaseStudyModal({
             </div>
           </div>
 
-          {/* Detailed Content Columns */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 md:p-10 bg-[#0b0b0d]">
-            
-            {/* Left/Main Column - Narrative */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Challenge */}
-              <section className="space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/70">
-                    <Briefcase className="h-4.5 w-4.5" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white tracking-wide">
-                    The Business Challenge
-                  </h3>
-                </div>
-                <p className="text-white/70 text-sm leading-relaxed font-light pl-10">
-                  {project.challenge}
-                </p>
-              </section>
-
-              {/* Approach */}
-              <section className="space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/70">
-                    <FileText className="h-4.5 w-4.5" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white tracking-wide">
-                    Analytical Approach
-                  </h3>
-                </div>
-                <p className="text-white/70 text-sm leading-relaxed font-light pl-10">
-                  {project.approach}
-                </p>
-              </section>
-
-              {/* Methodology */}
-              <section className="space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/70">
-                    <BarChart3 className="h-4.5 w-4.5" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white tracking-wide">
-                    Methodology & Financial Modeling
-                  </h3>
-                </div>
-                <p className="text-white/70 text-sm leading-relaxed font-light pl-10">
-                  {project.methodology}
-                </p>
-              </section>
-            </div>
-
-            {/* Right/Sidebar Column - Project Meta & Impact */}
-            <div className="space-y-6">
-              {/* Quick Details Card */}
-              <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 space-y-5 backdrop-blur-xl">
-                <h4 className="text-xs uppercase tracking-widest font-semibold text-white/40 pb-3 border-b border-white/5">
-                  Project Specs
-                </h4>
-                
-                <div className="grid grid-cols-2 gap-4 text-xs">
-                  <div>
-                    <span className="text-white/40 block mb-0.5">Role</span>
-                    <span className="text-white/80 font-medium">{project.role}</span>
-                  </div>
-                  <div>
-                    <span className="text-white/40 block mb-0.5">Timeline</span>
-                    <span className="text-white/80 font-medium">{project.timeline}</span>
-                  </div>
-                </div>
-
-                <div className="text-xs space-y-1.5">
-                  <span className="text-white/40 block mb-1">Key Tools</span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tools.map(tool => (
-                      <span
-                        key={tool}
-                        className="px-2 py-0.5 bg-white/5 text-white/70 rounded border border-white/5 text-[10px]"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="text-xs pt-1">
-                  <span className="text-white/40 block mb-1">Target Deliverable</span>
-                  <span className="text-white/80 font-medium block bg-black/30 px-3 py-2 rounded-lg border border-white/5 truncate">
-                    {project.deliverable}
-                  </span>
-                </div>
-              </div>
-
-              {/* Business Impact Card */}
-              <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 space-y-4 backdrop-blur-xl">
-                <h4 className="text-xs uppercase tracking-widest font-semibold text-white/40">
-                  Key Results & Business Impact
-                </h4>
-                <ul className="space-y-3.5">
-                  {project.impact.map((imp, idx) => (
-                    <li key={idx} className="flex gap-2.5 items-start text-xs">
-                      <CheckCircle className="h-4.5 w-4.5 text-white shrink-0 mt-0.5 opacity-80" />
-                      <span className="text-white/75 leading-relaxed font-light">
-                        {imp}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Download Deliverable CTA */}
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-4 rounded-xl flex items-center justify-center gap-2 bg-white text-black hover:bg-white/90 hover:scale-[1.01] active:scale-98 transition-all font-semibold shadow-lg shadow-white/5 cursor-pointer text-sm"
-              >
-                <Download className="h-4.5 w-4.5" />
-                Download Project Model
-              </a>
-            </div>
-
+          {/* Tab Switcher */}
+          <div className="flex border-b border-white/10 bg-[#0b0b0d] px-6 md:px-10 sticky top-0 z-30 backdrop-blur-md">
+            <button
+              onClick={() => setActiveTab("overview")}
+              className={`py-4 px-6 text-sm font-semibold border-b-2 transition-all cursor-pointer ${
+                activeTab === "overview"
+                  ? "border-blue-500 text-blue-400"
+                  : "border-transparent text-white/40 hover:text-white/70"
+              }`}
+            >
+              Case Study Overview
+            </button>
+            <button
+              onClick={() => setActiveTab("deliverable")}
+              className={`py-4 px-6 text-sm font-semibold border-b-2 transition-all cursor-pointer ${
+                activeTab === "deliverable"
+                  ? "border-blue-500 text-blue-400"
+                  : "border-transparent text-white/40 hover:text-white/70"
+              }`}
+            >
+              Interactive Model Viewer (Read-Only)
+            </button>
           </div>
+
+          {activeTab === "overview" ? (
+            /* Detailed Content Columns */
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 md:p-10 bg-[#0b0b0d]">
+              
+              {/* Left/Main Column - Narrative */}
+              <div className="lg:col-span-2 space-y-8">
+                {/* Challenge */}
+                <section className="space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/70">
+                      <Briefcase className="h-4.5 w-4.5" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white tracking-wide">
+                      The Business Challenge
+                    </h3>
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed font-light pl-10">
+                    {project.challenge}
+                  </p>
+                </section>
+
+                {/* Approach */}
+                <section className="space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/70">
+                      <FileText className="h-4.5 w-4.5" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white tracking-wide">
+                      Analytical Approach
+                    </h3>
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed font-light pl-10">
+                    {project.approach}
+                  </p>
+                </section>
+
+                {/* Methodology */}
+                <section className="space-y-3">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white/70">
+                      <BarChart3 className="h-4.5 w-4.5" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white tracking-wide">
+                      Methodology & Financial Modeling
+                    </h3>
+                  </div>
+                  <p className="text-white/70 text-sm leading-relaxed font-light pl-10">
+                    {project.methodology}
+                  </p>
+                </section>
+              </div>
+
+              {/* Right/Sidebar Column - Project Meta & Impact */}
+              <div className="space-y-6">
+                {/* Quick Details Card */}
+                <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 space-y-5 backdrop-blur-xl">
+                  <h4 className="text-xs uppercase tracking-widest font-semibold text-white/40 pb-3 border-b border-white/5">
+                    Project Specs
+                  </h4>
+                  
+                  <div className="grid grid-cols-2 gap-4 text-xs">
+                    <div>
+                      <span className="text-white/40 block mb-0.5">Role</span>
+                      <span className="text-white/80 font-medium">{project.role}</span>
+                    </div>
+                    <div>
+                      <span className="text-white/40 block mb-0.5">Timeline</span>
+                      <span className="text-white/80 font-medium">{project.timeline}</span>
+                    </div>
+                  </div>
+
+                  <div className="text-xs space-y-1.5">
+                    <span className="text-white/40 block mb-1">Key Tools</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tools.map(tool => (
+                        <span
+                          key={tool}
+                          className="px-2 py-0.5 bg-white/5 text-white/70 rounded border border-white/5 text-[10px]"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="text-xs pt-1">
+                    <span className="text-white/40 block mb-1">Target Deliverable</span>
+                    <span className="text-white/80 font-medium block bg-black/30 px-3 py-2 rounded-lg border border-white/5 truncate">
+                      {project.deliverable}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Business Impact Card */}
+                <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 space-y-4 backdrop-blur-xl">
+                  <h4 className="text-xs uppercase tracking-widest font-semibold text-white/40">
+                    Key Results & Business Impact
+                  </h4>
+                  <ul className="space-y-3.5">
+                    {project.impact.map((imp, idx) => (
+                      <li key={idx} className="flex gap-2.5 items-start text-xs">
+                        <CheckCircle className="h-4.5 w-4.5 text-white shrink-0 mt-0.5 opacity-80" />
+                        <span className="text-white/75 leading-relaxed font-light">
+                          {imp}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* View Deliverable CTA */}
+                <button
+                  onClick={() => setActiveTab("deliverable")}
+                  className="w-full py-4 rounded-xl flex items-center justify-center gap-2 bg-white text-black hover:bg-white/90 hover:scale-[1.01] active:scale-98 transition-all font-semibold shadow-lg shadow-white/5 cursor-pointer text-sm font-sans"
+                >
+                  <FileText className="h-4.5 w-4.5" />
+                  View Interactive Model
+                </button>
+              </div>
+
+            </div>
+          ) : (
+            /* Interactive Read-Only Viewers */
+            <div className="p-6 md:p-10 bg-[#0b0b0d]">
+              {project.title === "Marvel Financial Evolution" && <MarvelViewer />}
+              {project.title === "Financial Dashboard" && <DashboardViewer />}
+              {project.title === "Valuation Analysis" && <ExcelViewer />}
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>

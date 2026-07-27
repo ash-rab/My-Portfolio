@@ -24,15 +24,17 @@ export const metadata: Metadata = {
   description: "Portfolio of Aakash K, MBA Finance Student focusing on corporate finance, investment banking, and capital markets.",
 };
 
+import { SmoothScroll } from "@/components/SmoothScroll";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark">
       <body className={`${inter.variable} ${financeFont.variable} ${montserrat.variable} font-sans antialiased bg-[#121212] text-white`}>
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

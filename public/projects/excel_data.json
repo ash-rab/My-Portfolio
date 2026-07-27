@@ -1,0 +1,1026 @@
+{
+  "\ud83d\udcca Dashboard": [
+    [
+      null,
+      "MORGAN STANLEY WEALTH MANAGEMENT"
+    ],
+    [
+      null,
+      "INVESTMENT POLICY STATEMENT \u2014 PORTFOLIO DASHBOARD"
+    ],
+    [
+      null,
+      "  CLIENT PROFILE"
+    ],
+    [
+      null,
+      "Age Group",
+      null,
+      null,
+      "Under 35 \u2014 30+ Year Horizon"
+    ],
+    [
+      null,
+      "Investable Assets (Midpoint)",
+      null,
+      null,
+      "$375,000"
+    ],
+    [
+      null,
+      "Risk Profile",
+      null,
+      null,
+      "Balanced \u2014 Growth-Tilted"
+    ],
+    [
+      null,
+      "Income Requirement",
+      null,
+      null,
+      "Modest (~$5,000/yr target)"
+    ],
+    [
+      null,
+      "Composite Risk Capacity Score",
+      null,
+      null,
+      "8.0 / 10  (HIGH)"
+    ],
+    [
+      null,
+      "Account Types",
+      null,
+      null,
+      "401(k), Roth IRA, Taxable Brokerage, HSA"
+    ],
+    [
+      null,
+      "Investment Restrictions",
+      null,
+      null,
+      "Funds Only \u2014 No Individual Stocks"
+    ],
+    [
+      null,
+      "Benchmark",
+      null,
+      null,
+      "60% MSCI ACWI / 40% Bloomberg Agg (blended)"
+    ],
+    [
+      null,
+      "IPS Prepared",
+      null,
+      null,
+      "2025"
+    ],
+    [
+      null,
+      "  RETURN OBJECTIVES"
+    ],
+    [
+      null,
+      "Annual Real Return Target",
+      null,
+      null,
+      "5.5% \u2013 7.0%"
+    ],
+    [
+      null,
+      "Nominal Annual Return Target",
+      null,
+      null,
+      "7.5% \u2013 9.5%"
+    ],
+    [
+      null,
+      "Annual Income Generation",
+      null,
+      null,
+      "$2,500 \u2013 $5,000"
+    ],
+    [
+      null,
+      "Max Acceptable 1-Year Drawdown",
+      null,
+      null,
+      "-28% to -35%"
+    ],
+    [
+      null,
+      "Rebalancing Frequency",
+      null,
+      null,
+      "Annual + Threshold (\u00b17% drift)"
+    ],
+    [
+      null,
+      "Blended Expense Ratio",
+      null,
+      null,
+      "~0.09%"
+    ],
+    [
+      null,
+      "  30-YEAR WEALTH PROJECTION  (7.5% nominal, no additional contributions)"
+    ],
+    [
+      null,
+      "Milestone",
+      "Years",
+      "Age (est.)",
+      "Portfolio Value",
+      "Cumulative Gain"
+    ],
+    [
+      null,
+      "Today",
+      0,
+      35,
+      375000,
+      0
+    ],
+    [
+      null,
+      "Year 5",
+      5,
+      40,
+      538000,
+      163000
+    ],
+    [
+      null,
+      "Year 10",
+      10,
+      45,
+      771000,
+      396000
+    ],
+    [
+      null,
+      "Year 15",
+      15,
+      50,
+      1105000,
+      730000
+    ],
+    [
+      null,
+      "Year 20",
+      20,
+      55,
+      1585000,
+      1210000
+    ],
+    [
+      null,
+      "Year 25",
+      25,
+      60,
+      2273000,
+      1898000
+    ],
+    [
+      null,
+      "Year 30",
+      30,
+      65,
+      3257000,
+      2882000
+    ],
+    [
+      null,
+      "\u26a0  Illustrative projections only. Past performance does not guarantee future results. Consult a licensed CFP or RIA before making investment decisions."
+    ]
+  ],
+  "\ud83d\udcd0 Asset Allocation": [
+    [
+      null,
+      "STRATEGIC ASSET ALLOCATION"
+    ],
+    [
+      null,
+      "  MASTER ALLOCATION TABLE  |  Portfolio Midpoint: $375,000"
+    ],
+    [
+      null,
+      "Asset Class",
+      "Target %",
+      "Min %",
+      "Max %",
+      "$ Amount (375K)",
+      "Notes"
+    ],
+    [
+      null,
+      "EQUITIES \u2014 TOTAL",
+      0.68,
+      0.6,
+      0.75,
+      "#VALUE!",
+      "Core growth engine"
+    ],
+    [
+      null,
+      "  US Large Cap (Core) \u2014 VTI",
+      0.22,
+      0.18,
+      0.28,
+      "#VALUE!",
+      "Broadest US market exposure"
+    ],
+    [
+      null,
+      "  US Small/Mid Cap \u2014 IJR",
+      0.06,
+      0.04,
+      0.09,
+      "#VALUE!",
+      "Small-cap premium factor"
+    ],
+    [
+      null,
+      "  International Developed \u2014 VXUS",
+      0.18,
+      0.13,
+      0.23,
+      "#VALUE!",
+      "47-country diversification"
+    ],
+    [
+      null,
+      "  Emerging Markets \u2014 VWO",
+      0.1,
+      0.06,
+      0.14,
+      "#VALUE!",
+      "High-growth EM exposure",
+      null,
+      "Equities 68%",
+      0.68
+    ],
+    [
+      null,
+      "  Dividend / Income \u2014 VIG",
+      0.04,
+      0.02,
+      0.07,
+      "#VALUE!",
+      "Quality dividend growers",
+      null,
+      "Fixed Income 16%",
+      0.16
+    ],
+    [
+      null,
+      "  Satellite Tech Tilt \u2014 QQQ",
+      0.01,
+      0,
+      0.02,
+      "#VALUE!",
+      "Minimal innovation tilt",
+      null,
+      "Real Estate 8%",
+      0.08
+    ],
+    [
+      null,
+      "  VXUS Income Component",
+      0.07,
+      0.04,
+      0.1,
+      "#VALUE!",
+      "International dividend layer",
+      null,
+      "Alternatives 8%",
+      0.08
+    ],
+    [
+      null,
+      "FIXED INCOME \u2014 TOTAL",
+      0.16,
+      0.1,
+      0.22,
+      "#VALUE!",
+      "Volatility buffer + income"
+    ],
+    [
+      null,
+      "  US Aggregate Bonds \u2014 BND",
+      0.08,
+      0.05,
+      0.12,
+      "#VALUE!",
+      "Core bond market index"
+    ],
+    [
+      null,
+      "  TIPS \u2014 SCHP",
+      0.04,
+      0.02,
+      0.06,
+      "#VALUE!",
+      "Inflation protection"
+    ],
+    [
+      null,
+      "  High Yield Corp \u2014 HYG",
+      0.04,
+      0.02,
+      0.06,
+      "#VALUE!",
+      "Enhanced yield (capped)"
+    ],
+    [
+      null,
+      "REAL ESTATE (REITs) \u2014 VNQ",
+      0.08,
+      0.04,
+      0.12,
+      "#VALUE!",
+      "Real asset diversification"
+    ],
+    [
+      null,
+      "ALTERNATIVES \u2014 TOTAL",
+      0.08,
+      0.04,
+      0.12,
+      "#VALUE!",
+      "Inflation hedge + diversifier"
+    ],
+    [
+      null,
+      "  Commodities \u2014 PDBC",
+      0.04,
+      0.02,
+      0.06,
+      "#VALUE!",
+      "Inflation hedge, low correlation"
+    ],
+    [
+      null,
+      "  Infrastructure \u2014 IFRA",
+      0.04,
+      0.02,
+      0.06,
+      "#VALUE!",
+      "Policy-backed real assets"
+    ],
+    [
+      null,
+      "TOTAL PORTFOLIO",
+      1,
+      null,
+      null,
+      375000,
+      "100% deployment target"
+    ]
+  ],
+  "\ud83c\udfe6 Fund Selection": [
+    [
+      null,
+      "FUND & ETF SELECTION \u2014 CORE vs. SATELLITE"
+    ],
+    [
+      null,
+      "  CORE HOLDINGS  (75% of Portfolio) \u2014 Stable Foundation"
+    ],
+    [
+      null,
+      "Ticker",
+      "Fund Name",
+      "Alloc.",
+      "Exp. Ratio",
+      "Dollar (375K)",
+      "Investment Rationale"
+    ],
+    [
+      null,
+      "VTI",
+      "Vanguard Total Stock Market ETF",
+      0.22,
+      0.0003,
+      82500,
+      "Broadest US equity exposure \u2014 4,000+ stocks, market-cap weighted. Near-zero cost. 30-year core anchor."
+    ],
+    [
+      null,
+      "VXUS",
+      "Vanguard Total International ETF",
+      0.18,
+      0.0007,
+      67500,
+      "Single-fund international exposure across 47 countries, developed + emerging. Eliminates home-country bias."
+    ],
+    [
+      null,
+      "BND",
+      "Vanguard Total Bond Market ETF",
+      0.08,
+      0.0003,
+      30000,
+      "Investment-grade US bond market. Core income and volatility buffer. Reduces max drawdown in crashes."
+    ],
+    [
+      null,
+      "SCHP",
+      "Schwab US TIPS ETF",
+      0.04,
+      0.0003,
+      15000,
+      "Treasury Inflation-Protected Securities. Real return guarantee; critical over 30-year horizon with uncertain inflation."
+    ],
+    [
+      null,
+      "VNQ",
+      "Vanguard Real Estate ETF (REITs)",
+      0.08,
+      0.0012,
+      30000,
+      "REIT index fund. Real estate exposure without direct ownership. ~3.5% dividend yield; low bond correlation."
+    ],
+    [
+      null,
+      "VIG",
+      "Vanguard Dividend Appreciation ETF",
+      0.04,
+      0.0006,
+      15000,
+      "Dividend growers with 10+ consecutive years of increases. Quality screen vs. raw yield chasers."
+    ],
+    [
+      null,
+      "  SATELLITE HOLDINGS  (25% of Portfolio) \u2014 Higher-Growth Opportunity"
+    ],
+    [
+      null,
+      "Ticker",
+      "Fund Name",
+      "Alloc.",
+      "Exp. Ratio",
+      "Dollar (375K)",
+      "Investment Rationale"
+    ],
+    [
+      null,
+      "VWO",
+      "Vanguard Emerging Markets ETF",
+      0.06,
+      0.0008,
+      22500,
+      "Dedicated EM beyond VXUS. GDP growth 2-3x faster than developed markets. Demographic tailwind through 2050+."
+    ],
+    [
+      null,
+      "IJR",
+      "iShares Core S&P Small-Cap ETF",
+      0.06,
+      0.0006,
+      22500,
+      "US small-cap factor exposure. Historical premium of +1.5-2% above large-cap over full market cycles."
+    ],
+    [
+      null,
+      "HYG",
+      "iShares iBoxx High Yield Corp ETF",
+      0.04,
+      0.0048,
+      15000,
+      "High-yield bond income. Adds 3-4% yield above Treasuries. Limited to 4% to cap credit risk."
+    ],
+    [
+      null,
+      "PDBC",
+      "Invesco Optimum Yield Commodities ETF",
+      0.04,
+      0.0059,
+      15000,
+      "Commodities basket (energy, metals, agriculture). Inflation hedge with low equity correlation. K-1 free."
+    ],
+    [
+      null,
+      "IFRA",
+      "iShares US Infrastructure ETF",
+      0.04,
+      0.003,
+      15000,
+      "US infrastructure buildout theme. Bridges equity and real assets. Policy-backed bipartisan tailwind."
+    ],
+    [
+      null,
+      "QQQ",
+      "Invesco NASDAQ-100 ETF",
+      0.01,
+      0.002,
+      3750,
+      "Minimal tech/innovation tilt. Keep below 2% to avoid concentration. Optional tactical position."
+    ],
+    [
+      null,
+      "\u2605  Blended Portfolio Weighted Average Expense Ratio: ~0.09% annually  (vs. industry avg 0.44% for managed portfolios)"
+    ]
+  ],
+  "\ud83d\udcb0 Income & Growth": [
+    [
+      null,
+      "INCOME LAYER & GROWTH LAYER ARCHITECTURE"
+    ],
+    [
+      null,
+      "  INCOME LAYER \u2014 Passive Cash Flow Generation"
+    ],
+    [
+      null,
+      "Ticker",
+      "Fund",
+      "Alloc.",
+      "Est. Yield",
+      "Annual Income ($375K)"
+    ],
+    [
+      null,
+      "VIG",
+      "Dividend Appreciation ETF",
+      0.04,
+      0.018,
+      270
+    ],
+    [
+      null,
+      "VNQ",
+      "Real Estate Index ETF",
+      0.08,
+      0.035,
+      1050
+    ],
+    [
+      null,
+      "BND",
+      "Total Bond Market ETF",
+      0.08,
+      0.032,
+      960
+    ],
+    [
+      null,
+      "SCHP",
+      "US TIPS ETF",
+      0.04,
+      0.024,
+      360
+    ],
+    [
+      null,
+      "HYG",
+      "High Yield Corp ETF",
+      0.04,
+      0.058,
+      870
+    ],
+    [
+      null,
+      "VXUS",
+      "Total International ETF",
+      0.18,
+      0.029,
+      1958
+    ],
+    [
+      null,
+      "TOTAL INCOME LAYER",
+      "Aggregate",
+      0.46,
+      0.029,
+      5468
+    ],
+    [
+      null,
+      "  GROWTH LAYER \u2014 Long-Term Capital Appreciation"
+    ],
+    [
+      null,
+      "Ticker",
+      "Fund",
+      "Alloc.",
+      "Growth Thesis",
+      "Key Risk"
+    ],
+    [
+      null,
+      "VTI",
+      "Total Stock Market ETF",
+      "22%",
+      "Full US market participation. $1 invested in 1993 \u2192 ~$21 by 2025.",
+      "Market beta; declines with US recessions"
+    ],
+    [
+      null,
+      "VWO",
+      "Emerging Markets ETF",
+      "6%",
+      "GDP growth 2-3x faster than developed. Demographic tailwind 2050+.",
+      "Political/currency risk, EM volatility"
+    ],
+    [
+      null,
+      "IJR",
+      "S&P Small-Cap ETF",
+      "6%",
+      "Historical small-cap premium: +1.5-2% above large-cap over full cycles.",
+      "Higher volatility vs. large cap"
+    ],
+    [
+      null,
+      "IFRA",
+      "US Infrastructure ETF",
+      "4%",
+      "Multi-decade infrastructure rebuilding cycle; bipartisan policy support.",
+      "Interest rate sensitivity"
+    ],
+    [
+      null,
+      "QQQ",
+      "NASDAQ-100 ETF",
+      "1%",
+      "Technology sector leadership; innovation compounding.",
+      "Concentration risk if oversized"
+    ]
+  ],
+  "\ud83e\uddfe Tax Location": [
+    [
+      null,
+      "TAX-LOCATION OPTIMIZATION STRATEGY"
+    ],
+    [
+      null,
+      "  ACCOUNT-LEVEL FUND ASSIGNMENTS"
+    ],
+    [
+      null,
+      "Account",
+      "Primary Holdings",
+      "Rationale",
+      "Tax Treatment",
+      "Priority"
+    ],
+    [
+      null,
+      "401(k)",
+      "BND, HYG, SCHP, IJR",
+      "Bond interest fully sheltered from ordinary income. High-turnover small-cap also shielded from annual cap gains distributions.",
+      "Tax-deferred \u2014 ordinary income at withdrawal",
+      "1st \u2014 Max out first"
+    ],
+    [
+      null,
+      "Roth IRA",
+      "VWO, IJR, QQQ, IFRA",
+      "Highest-expected-return assets grow 100% tax-free permanently. No RMDs. Greatest dollar benefit from Roth treatment.",
+      "Tax-free growth + tax-free withdrawal",
+      "1st \u2014 Max out first"
+    ],
+    [
+      null,
+      "HSA",
+      "VTI or VXUS (invested portion)",
+      "Triple tax advantage: deduct contributions, tax-free growth, tax-free withdrawal for qualifying medical expenses.",
+      "Triple tax-advantaged",
+      "1st \u2014 Invest surplus"
+    ],
+    [
+      null,
+      "Taxable Brokerage",
+      "VTI, VXUS, VNQ, VIG, PDBC",
+      "Index ETFs have near-zero capital gain distributions. VXUS qualifies for foreign tax credit. Hold tax-efficient funds only.",
+      "Long-term cap gains (15-20%) + dividends",
+      "2nd \u2014 After tax-adv."
+    ],
+    [
+      null,
+      "  TAX-LOSS HARVESTING (TLH) SWAP TABLE"
+    ],
+    [
+      null,
+      "Sell (Loss Position)",
+      null,
+      "Notes"
+    ],
+    [
+      null,
+      "VTI \u2192 Sell",
+      null,
+      "ITOT or SCHB",
+      "Hold substitute 31+ days to avoid wash-sale; swap back if desired"
+    ],
+    [
+      null,
+      "VXUS \u2192 Sell",
+      null,
+      "IXUS or SPDW+VWO",
+      "International substitute pair; similar global exposure"
+    ],
+    [
+      null,
+      "VNQ \u2192 Sell",
+      null,
+      "IYR or USRT",
+      "REIT ETF substitutes; near-identical sector and yield profile"
+    ],
+    [
+      null,
+      "BND \u2192 Sell",
+      null,
+      "AGG or SCHZ",
+      "Aggregate bond alternatives; essentially identical duration + credit"
+    ]
+  ],
+  "\ud83d\udcc5 Rebalancing": [
+    [
+      null,
+      "REBALANCING RULES & ANNUAL CALENDAR"
+    ],
+    [
+      null,
+      "  REBALANCING TRIGGER RULES"
+    ],
+    [
+      null,
+      "Trigger Type",
+      "Threshold",
+      "Action Required",
+      "Priority"
+    ],
+    [
+      null,
+      "Calendar Review",
+      "Annually (January)",
+      "Review all weights; rebalance if any fall outside tactical range",
+      "Routine"
+    ],
+    [
+      null,
+      "Major Asset Class Drift",
+      "\u00b17% from target",
+      "Mandatory rebalance within 30 days of breach",
+      "\ud83d\udd34 Mandatory"
+    ],
+    [
+      null,
+      "Sub-Asset Class Drift",
+      "\u00b15% from target",
+      "Rebalance at next quarterly review",
+      "\ud83d\udfe1 Quarterly"
+    ],
+    [
+      null,
+      "New Contributions",
+      "Every deposit",
+      "Direct all new cash to underweight positions first \u2014 no selling needed",
+      "\ud83d\udfe2 Always"
+    ],
+    [
+      null,
+      "Life Event Trigger",
+      "Major life change",
+      "Full IPS review: marriage, child, job change, inheritance, disability",
+      "\ud83d\udd34 Mandatory"
+    ],
+    [
+      null,
+      "  ANNUAL REBALANCING CALENDAR"
+    ],
+    [
+      null,
+      "Month",
+      "Action",
+      "Detailed Instructions",
+      "Accounts"
+    ],
+    [
+      null,
+      "January",
+      "Full Annual Review",
+      "Review all allocations vs targets. Execute rebalancing trades in tax-advantaged accounts first to minimize taxes. Log decisions.",
+      "All accounts"
+    ],
+    [
+      null,
+      "April",
+      "Q2 Quarterly Check",
+      "Check drift only. No trades unless \u22657% breach detected. Confirm Roth IRA contribution has been made for the current tax year.",
+      "Roth IRA; All"
+    ],
+    [
+      null,
+      "July",
+      "Q3 Quarterly Check",
+      "Review drift. Assess mid-year performance vs. blended benchmark. Note any sector concentration that has crept above 25%.",
+      "All accounts"
+    ],
+    [
+      null,
+      "October",
+      "Tax-Loss Harvest Window",
+      "Identify positions with losses \u226510% in taxable account. Execute TLH swaps before Nov 30. Reinvest proceeds in substitute funds.",
+      "Taxable only"
+    ],
+    [
+      null,
+      "December",
+      "Year-End Planning",
+      "Confirm 401(k) contribution maximized. Fund Roth IRA if not done. Review beneficiaries. Plan any charitable giving with appreciated lots.",
+      "All accounts"
+    ],
+    [
+      null,
+      "  REBALANCING EXECUTION ORDER  (always follow this sequence)"
+    ],
+    [
+      null,
+      "1.  Redirect new contributions and dividends to underweight asset classes first \u2014 no selling needed."
+    ],
+    [
+      null,
+      "2.  Rebalance WITHIN 401(k) and Roth IRA \u2014 free trades, zero tax consequences."
+    ],
+    [
+      null,
+      "3.  If taxable rebalancing is required: harvest losses first (TLH), then pare winners only if absolutely needed."
+    ],
+    [
+      null,
+      "4.  Never sell a position in taxable with short-term gain (held <1 year). Wait for long-term capital gains treatment."
+    ],
+    [
+      null,
+      "5.  Document all trades with rationale in a personal investment journal."
+    ]
+  ],
+  "\u26a1 Risk & Benchmark": [
+    [
+      null,
+      "RISK PROFILE & BENCHMARK TRACKING"
+    ],
+    [
+      null,
+      "  RISK CAPACITY ASSESSMENT"
+    ],
+    [
+      null,
+      "Risk Factor",
+      "Score",
+      "Rating",
+      "Commentary"
+    ],
+    [
+      null,
+      "Time Horizon (30+ years)",
+      "10/10",
+      "Excellent",
+      "Maximum possible score \u2014 30 years allows full market cycle recovery"
+    ],
+    [
+      null,
+      "Human Capital (career ahead)",
+      "9/10",
+      "Excellent",
+      "Majority of lifetime earnings still ahead \u2014 can recover from portfolio losses"
+    ],
+    [
+      null,
+      "Asset Base ($250K-$500K)",
+      "6/10",
+      "Good",
+      "Meaningful base, but early losses have outsized psychological impact"
+    ],
+    [
+      null,
+      "Income Stability (employment)",
+      "7/10",
+      "Good",
+      "Assumed stable employment with capacity for ongoing contributions"
+    ],
+    [
+      null,
+      "Liquidity Need (modest income req)",
+      "8/10",
+      "Strong",
+      "Modest income requirement allows most assets to remain in growth mode"
+    ],
+    [
+      null,
+      "COMPOSITE RISK CAPACITY",
+      "8.0/10",
+      "HIGH",
+      "Supports aggressive-to-balanced allocation \u2014 72% risk assets appropriate"
+    ],
+    [
+      null,
+      "  SCENARIO STRESS TESTS"
+    ],
+    [
+      null,
+      "Scenario",
+      "Est. Portfolio Impact",
+      "Protection Mechanism",
+      "Severity"
+    ],
+    [
+      null,
+      "Global Equity Crash (-40%)",
+      "-23% to -28%",
+      "16% bonds + 8% REITs + alternatives buffer loss",
+      "High"
+    ],
+    [
+      null,
+      "US Recession / Bear Market (-35%)",
+      "-18% to -22%",
+      "International diversification (28%) partially decouples",
+      "High"
+    ],
+    [
+      null,
+      "Stagflation (high CPI, low growth)",
+      "-5% to -8%",
+      "TIPS (4%) + Commodities (4%) + REITs (8%) provide hedge",
+      "Medium"
+    ],
+    [
+      null,
+      "Emerging Market Crisis (-50% EM)",
+      "-5% to -8%",
+      "EM capped at 16%; developed markets remain functional",
+      "Medium"
+    ],
+    [
+      null,
+      "Rising Interest Rates (+2%)",
+      "-6% to -10%",
+      "Short-to-intermediate duration; TIPS adjust with CPI",
+      "Medium"
+    ],
+    [
+      null,
+      "  BENCHMARK COMPOSITION & PERFORMANCE METRICS"
+    ],
+    [
+      null,
+      "Benchmark Index",
+      "Weight",
+      "Tracks",
+      "KPI Target"
+    ],
+    [
+      null,
+      "MSCI ACWI Index",
+      "40%",
+      "Global equities \u2014 US + International",
+      "Annual return within \u00b12% of benchmark"
+    ],
+    [
+      null,
+      "Russell 3000 Index",
+      "20%",
+      "Total US equity market",
+      "3-yr rolling Sharpe Ratio > 0.50"
+    ],
+    [
+      null,
+      "Bloomberg US Aggregate Bond Index",
+      "16%",
+      "US investment-grade bonds",
+      "Blended expense ratio < 0.15%"
+    ],
+    [
+      null,
+      "FTSE NAREIT All REITs Index",
+      "8%",
+      "US real estate investment trusts",
+      "Annual income > $2,500"
+    ],
+    [
+      null,
+      "Bloomberg Commodity Index",
+      "8%",
+      "Diversified commodities",
+      "Max drawdown within \u00b15% of benchmark"
+    ],
+    [
+      null,
+      "MSCI Emerging Markets Index",
+      "8%",
+      "Emerging market equities",
+      "No single sector > 25%"
+    ],
+    [
+      null,
+      "COMPOSITE BENCHMARK",
+      "100%",
+      "Blended, rebalanced annually",
+      "Primary performance yardstick"
+    ]
+  ]
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useSpring } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { ScrollyCanvas } from "@/components/ScrollyCanvas";
 import { StoryOverlay } from "@/components/StoryOverlay";
@@ -19,6 +19,13 @@ export default function Home() {
     offset: ["start start", "end end"]
   });
 
+  // 120Hz ProMotion Spring Interpolation
+  const smoothScrollYProgress = useSpring(scrollYProgress, {
+    stiffness: 400,
+    damping: 40,
+    restDelta: 0.0001
+  });
+
   return (
     <main className="relative min-h-screen bg-[#121212]">
       <PremiumEffects />
@@ -27,26 +34,25 @@ export default function Home() {
       {/* 500vh Scrolly section */}
       <div ref={containerRef} className="relative h-[500vh]">
         {/* Sticky wrapper that stays in view while scrolling through the 500vh container */}
-        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-black">
-          <ScrollyCanvas scrollYProgress={scrollYProgress} />
-          <StoryOverlay scrollYProgress={scrollYProgress} />
+        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-black transform-gpu will-change-transform">
+          <ScrollyCanvas scrollYProgress={smoothScrollYProgress} />
+          <StoryOverlay scrollYProgress={smoothScrollYProgress} />
         </div>
       </div>
 
       {/* Subsequent sections below the scrolly section */}
-      <div className="relative z-20 bg-[#121212]">
-        {/* Global Finance Background for lower sections */}
+      <div className="relative z-20 bg-[#121212] overflow-hidden">
+        {/* Finance Background strictly scoped to lower sections */}
         <div 
           className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-screen"
           style={{
             backgroundImage: "url('/finance_bg.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundAttachment: "fixed"
           }}
         />
         
-        <div className="relative z-10 bg-gradient-to-b from-black/80 via-transparent to-black/80">
+        <div className="relative z-10 bg-transparent">
           <AboutSkillsAchievements />
           <Projects />
           <Footer />
