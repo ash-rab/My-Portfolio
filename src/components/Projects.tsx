@@ -122,15 +122,19 @@ export function Projects() {
     }
   ];
 
-  // Disable body scroll when modal is open
+  // Disable body scroll and pause Lenis smooth scroll when modal is open
   useEffect(() => {
+    const lenis = (window as any)?.lenis;
     if (selectedProject) {
       document.body.style.overflow = "hidden";
+      if (lenis) lenis.stop();
     } else {
       document.body.style.overflow = "";
+      if (lenis) lenis.start();
     }
     return () => {
       document.body.style.overflow = "";
+      if (lenis) lenis.start();
     };
   }, [selectedProject]);
 
@@ -356,7 +360,8 @@ function CaseStudyModal({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       onClick={handleBackdropClick}
-      className="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 flex items-center justify-center p-4 md:p-8 overflow-y-auto"
+      data-lenis-prevent
+      className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 md:p-8 overflow-y-auto"
     >
       {/* Ambient background glow circle */}
       <div
@@ -394,7 +399,7 @@ function CaseStudyModal({
         </button>
 
         {/* Modal Scroll Wrapper */}
-        <div className="overflow-y-auto max-h-[85vh]">
+        <div data-lenis-prevent className="overflow-y-auto max-h-[85vh]">
           {/* Wide Netflix Hero Banner */}
           <div className="relative w-full h-[260px] md:h-[380px] bg-black">
             {/* Cinematic Background Image */}

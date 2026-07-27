@@ -15,6 +15,8 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       lerp: 0.12, // Ultra-responsive 120Hz frame lerp rate
     });
 
+    (window as any).lenis = lenis;
+
     let rafId: number;
 
     function raf(time: number) {
@@ -27,6 +29,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete (window as any).lenis;
     };
   }, []);
 

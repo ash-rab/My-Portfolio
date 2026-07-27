@@ -38,7 +38,7 @@ export function MarvelViewer() {
   return (
     <div className="flex flex-col md:flex-row h-[600px] border border-white/10 rounded-2xl overflow-hidden bg-black/40 backdrop-blur-xl">
       {/* Left Navigation Sidebar */}
-      <div className="w-full md:w-64 border-b md:border-b-0 md:border-r border-white/10 bg-zinc-950/50 p-4 overflow-y-auto shrink-0">
+      <div data-lenis-prevent className="w-full md:w-64 border-b md:border-b-0 md:border-r border-white/10 bg-zinc-950/50 p-4 overflow-y-auto shrink-0">
         <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mb-4 px-2">
           Document Sections
         </div>
@@ -65,7 +65,7 @@ export function MarvelViewer() {
       </div>
 
       {/* Right Reading Panel */}
-      <div className="flex-grow p-6 md:p-8 overflow-y-auto bg-zinc-900/10 text-white/80 leading-relaxed text-sm select-none">
+      <div data-lenis-prevent className="flex-grow p-6 md:p-8 overflow-y-auto bg-zinc-900/10 text-white/80 leading-relaxed text-sm select-none">
         {activeSection === "summary" && (
           <div className="space-y-4">
             <h2 className="text-xl font-bold text-white font-finance border-b border-white/10 pb-2 flex items-center gap-2">
