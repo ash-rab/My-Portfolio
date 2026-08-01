@@ -101,12 +101,6 @@ export function AboutSkillsAchievements() {
 
   const leadership: Milestone[] = [
     {
-      title: "Department Council President",
-      sub: "CMS Student Council",
-      year: "2024",
-      desc: "Elected to lead administrative student coordination, organizing major events and industry seminars."
-    },
-    {
       title: "Class Representative",
       sub: "MBA Finance Cohort",
       year: "2023",
