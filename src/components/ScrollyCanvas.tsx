@@ -11,6 +11,7 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const lastIndexRef = useRef<number>(-1);
+  const requestedIndexRef = useRef<number>(0);
   const frameCount = 120;
 
   // Preload Images & Init fixed canvas resolution once
@@ -33,8 +34,16 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
       
       img.onload = () => {
         loadedCount++;
+        // If this image is the one currently requested, draw it!
+        if (requestedIndexRef.current === i) {
+          renderFrame(i);
+        }
+        // Draw the first frame as soon as it loads if nothing has rendered yet
+        if (i === 0 && lastIndexRef.current === -1) {
+          renderFrame(0);
+        }
         if (loadedCount === frameCount) {
-          renderFrame(lastIndexRef.current >= 0 ? lastIndexRef.current : 0);
+          renderFrame(requestedIndexRef.current);
         }
       };
       loadedImages.push(img);
@@ -50,15 +59,17 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
     if (images.length === 0 || !canvasRef.current) return;
     
     const frameInt = Math.floor(index);
+    requestedIndexRef.current = frameInt;
+
+    const img = images[frameInt];
+    if (!img || !img.complete) return;
+    
     if (frameInt === lastIndexRef.current && frameInt !== 0) return;
     lastIndexRef.current = frameInt;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
-    const img = images[frameInt];
-    if (!img || !img.complete) return;
 
     const cw = canvas.width;
     const ch = canvas.height;
