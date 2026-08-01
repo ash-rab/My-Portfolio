@@ -101,7 +101,7 @@ export function AboutSkillsAchievements() {
 
   const leadership: Milestone[] = [
     {
-      title: "Class Representative",
+      title: "Department Council Member",
       sub: "MBA Finance Cohort",
       year: "2023",
       desc: "Served as main liaison between professors and students to streamline curriculum delivery."
