@@ -87,7 +87,7 @@ export function AboutSkillsAchievements() {
     },
     {
       title: "Gold Medalist",
-      sub: "National Finance & Business Quiz",
+      sub: "Inter-Collegiate Quiz",
       year: "2024",
       desc: "Ranked 1st place out of 100+ competing teams in strategic business quiz challenges."
     },
