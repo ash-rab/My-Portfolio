@@ -33,7 +33,7 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
 
     // Load first frame immediately
     const firstImg = loadedImages[0];
-    firstImg.src = "/sequence/frame_000_delay-0.066s.webp";
+    firstImg.src = "/Sequence/frame_000_delay-0.066s.webp";
     firstImg.onload = () => {
       loadedCount++;
       if (lastIndexRef.current === -1) {
@@ -59,7 +59,7 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
       batch.forEach((i) => {
         const img = loadedImages[i];
         const paddedIndex = i.toString().padStart(3, "0");
-        img.src = `/sequence/frame_${paddedIndex}_delay-0.066s.webp`;
+        img.src = `/Sequence/frame_${paddedIndex}_delay-0.066s.webp`;
 
         const onFinished = () => {
           loadedCount++;
