@@ -25,30 +25,67 @@ export function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
     const loadedImages: HTMLImageElement[] = [];
     let loadedCount = 0;
 
+    // Initialize all image objects synchronously
     for (let i = 0; i < frameCount; i++) {
-      const img = new Image();
-      // Format number to '000' to '119'
-      const paddedIndex = i.toString().padStart(3, "0");
-      // Use exactly lowercase 'sequence' to match Vercel's case-sensitive Linux filesystem
-      img.src = `/sequence/frame_${paddedIndex}_delay-0.066s.png`;
-      
-      img.onload = () => {
-        loadedCount++;
-        // If this image is the one currently requested, draw it!
-        if (requestedIndexRef.current === i) {
-          renderFrame(i);
-        }
-        // Draw the first frame as soon as it loads if nothing has rendered yet
-        if (i === 0 && lastIndexRef.current === -1) {
-          renderFrame(0);
-        }
-        if (loadedCount === frameCount) {
-          renderFrame(requestedIndexRef.current);
-        }
-      };
-      loadedImages.push(img);
+      loadedImages.push(new Image());
     }
     imagesRef.current = loadedImages;
+
+    // Load first frame immediately
+    const firstImg = loadedImages[0];
+    firstImg.src = "/sequence/frame_000_delay-0.066s.webp";
+    firstImg.onload = () => {
+      loadedCount++;
+      if (lastIndexRef.current === -1) {
+        renderFrame(0);
+      }
+      if (requestedIndexRef.current === 0) {
+        renderFrame(0);
+      }
+    };
+
+    // Sequential batch loader for remaining frames (batches of 6)
+    const remainingIndices = Array.from({ length: frameCount - 1 }, (_, k) => k + 1);
+    const batchSize = 6;
+
+    const loadNextBatch = (batchIndex: number) => {
+      const start = batchIndex * batchSize;
+      const end = Math.min(start + batchSize, remainingIndices.length);
+      if (start >= remainingIndices.length) return;
+
+      const batch = remainingIndices.slice(start, end);
+      let batchLoaded = 0;
+
+      batch.forEach((i) => {
+        const img = loadedImages[i];
+        const paddedIndex = i.toString().padStart(3, "0");
+        img.src = `/sequence/frame_${paddedIndex}_delay-0.066s.webp`;
+
+        const onFinished = () => {
+          loadedCount++;
+          batchLoaded++;
+          if (requestedIndexRef.current === i) {
+            renderFrame(i);
+          }
+          if (loadedCount === frameCount) {
+            renderFrame(requestedIndexRef.current);
+          }
+          if (batchLoaded === batch.length) {
+            loadNextBatch(batchIndex + 1);
+          }
+        };
+
+        img.onload = onFinished;
+        img.onerror = onFinished; // proceed anyway on error
+      });
+    };
+
+    // Start loading subsequent batches after a 100ms delay to give critical assets priority
+    const timer = setTimeout(() => {
+      loadNextBatch(0);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Map scroll progress to frame index

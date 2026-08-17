@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.code-workspace
+
+# local backups
+/public/sequence_backup/
+/dev_server_output.txt
+
